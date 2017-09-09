@@ -24,5 +24,8 @@
   },
   "bin": {
     "bitcoin-hd": "./bin/bitcoin-hd.js"
+  },
+  "scripts": {
+    "lint": "standard --verbose | snazzy"
   }
 }
