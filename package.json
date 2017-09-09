@@ -7,6 +7,7 @@
   "devDependencies": {
     "caporal": "0.7.0",
     "editorconfig-tools": "0.1.1",
+    "husky": "0.14.3",
     "lint-staged": "4.1.3",
     "prettier-standard": "6.0.0",
     "snazzy": "7.0.0",
