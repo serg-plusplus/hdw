@@ -29,6 +29,9 @@
   },
   "scripts": {
     "lint": "standard --verbose | snazzy",
-    "precommit": "lint-staged"
+    "test": "jest --coverage",
+    "ci": "jest --watch",
+    "precommit": "lint-staged",
+    "prepush": "jest"
   }
 }
