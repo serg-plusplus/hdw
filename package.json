@@ -7,8 +7,10 @@
   "bin": {
     "bitcoin-hd": "./bin/bitcoin-hd.js"
   },
+  "dependencies": {
+    "caporal": "0.7.0"
+  },
   "devDependencies": {
-    "caporal": "0.7.0",
     "editorconfig-tools": "0.1.1",
     "husky": "0.14.3",
     "jest": "21.0.2",
