@@ -12,6 +12,16 @@
     "snazzy": "7.0.0",
     "standard": "10.0.3"
   },
+  "lint-staged": {
+    "*.{cmd,html,json,md,sh,txt,xml,yml}": [
+      "editorconfig-tools fix",
+      "git add"
+    ],
+    "*.js": [
+      "prettier-standard && standard --fix",
+      "git add"
+    ]
+  },
   "bin": {
     "bitcoin-hd": "./bin/bitcoin-hd.js"
   }
