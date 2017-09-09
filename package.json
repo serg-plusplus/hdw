@@ -1,9 +1,12 @@
 {
   "name": "bitcoin-hd",
+  "description": "Bitcoin wallet",
   "version": "0.0.0",
-  "description": "...",
-  "main": "index.js",
   "license": "MIT",
+  "main": "lib/index.js",
+  "bin": {
+    "bitcoin-hd": "./bin/bitcoin-hd.js"
+  },
   "devDependencies": {
     "caporal": "0.7.0",
     "editorconfig-tools": "0.1.1",
@@ -23,9 +26,6 @@
       "prettier-standard && standard --fix",
       "git add"
     ]
-  },
-  "bin": {
-    "bitcoin-hd": "./bin/bitcoin-hd.js"
   },
   "scripts": {
     "lint": "standard --verbose | snazzy",
