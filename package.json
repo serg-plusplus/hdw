@@ -3,5 +3,11 @@
   "version": "0.0.0",
   "description": "...",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "caporal": "0.7.0"
+  },
+  "bin": {
+    "bitcoin-hd": "./bin/bitcoin-hd.js"
+  }
 }
