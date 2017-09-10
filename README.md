@@ -1,5 +1,5 @@
-# bitcoin-hd
-Bitcoin 'wallet'
+# hdw
+Multi coin HD 'wallet'
 
 ## Contributing
 

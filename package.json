@@ -1,11 +1,11 @@
 {
-  "name": "bitcoin-hd",
-  "description": "Bitcoin wallet",
+  "name": "hdw",
+  "description": "Multi coin HD wallet",
   "version": "0.0.0",
   "license": "MIT",
   "main": "lib/index.js",
   "bin": {
-    "bitcoin-hd": "./bin/bitcoin-hd.js"
+    "hdw": "./bin/hdw.js"
   },
   "dependencies": {
     "bip39": "2.4.0",
