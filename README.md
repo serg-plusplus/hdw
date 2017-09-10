@@ -1,6 +1,9 @@
 # hdw
 Multi coin HD 'wallet'
 
+## Todo
+⋅⋅* Replace 'bip39' with new module or custom implementation
+
 ## Contributing
 
 1. Fork it!
