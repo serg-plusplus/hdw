@@ -15,12 +15,11 @@ const inquirer = require('inquirer')
 // package.json file
 const pkg = require('../package.json')
 
-// bip39 with few wrapped methods
-const bip39 = require('../lib/bip39')
+// mnemonic tools (wrapped bip39 module)
+const mnemonic = require('../lib/mnemonic')
 
 prog
   .version(pkg.version)
-  .logger(prog.logger())
   /**
    * 'generate' command
    */
@@ -29,10 +28,9 @@ prog
     const questions = [
       {
         type: 'list',
-        name: 'wordlist',
+        name: 'language',
         message: 'Choose language:',
-        choices: Object.keys(bip39.wordlistsSimple),
-        filter: key => bip39.wordlists[key]
+        choices: mnemonic.languages
       },
       {
         type: 'list',
@@ -45,42 +43,37 @@ prog
 
     inquirer
       .prompt(questions)
-      .then(answers => {
+      .then(({ language, numberOfWords }) => {
         try {
-          logger.info(
-            bip39.generateMnemonicSimple(
-              answers.numberOfWords,
-              answers.wordlist
-            )
-          )
+          logger.info(mnemonic.generate(language, numberOfWords))
         } catch (err) {
-          console.error(err)
+          logger.error({ err }) // !todo, remove caporal.js
         }
       })
-      .catch(console.error)
+      .catch(err => logger.error({ err })) // !todo, remove caporal.js
   })
-  /**
+/**
    * 'new' command
    */
-  // .command('new', 'Create new HD(hierarchical deterministic) wallet')
-  // .argument(
-  //   '<mnemonic>',
-  //   'Mnemonic code. bip39',
-  //   mnn => {
-  //     const isValid = mnemonic.validate(code)
-  //   }
-  // )
-  // .option('-n, --network <network>', 'Default network for this wallet')
-  /**
+// .command('new', 'Create new HD(hierarchical deterministic) wallet')
+// .argument(
+//   '<mnemonic>',
+//   'Mnemonic code. bip39',
+//   mnn => {
+//     const isValid = mnemonic.validate(code)
+//   }
+// )
+// .option('-n, --network <network>', 'Default network for this wallet')
+/**
    * 'send' command
    */
-  .command('send', 'Transfer coins (push transaction into current network)')
-  .argument('<address>', 'Destination address')
-  .option('-n, --network <network>', 'Network')
-  .option('-a, --amount <amount>')
-  .action((args, opts, logger) => {
-    logger.info({ args, opts })
-  })
+// .command('send', 'Transfer coins (push transaction into current network)')
+// .argument('<address>', 'Destination address')
+// .option('-n, --network <network>', 'Network')
+// .option('-a, --amount <amount>')
+// .action((args, opts, logger) => {
+//   logger.info({ args, opts })
+// })
 
 // parse and match CLI argv
 prog.parse(process.argv)
