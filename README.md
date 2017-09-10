@@ -1,8 +1,11 @@
+### BE CAREFUL!
+> CRUDE EXPERIMENTAL MODULE.
+
 # hdw
 Multi coin HD 'wallet'
 
 ## Todo
-⋅⋅* Replace 'bip39' with new module or custom implementation
+* Replace 'bip39' with new module or custom implementation
 
 ## Contributing
 
