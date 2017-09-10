@@ -1,5 +1,8 @@
-# bitcoin-hd
-Bitcoin 'wallet'
+# hdw
+Multi coin HD 'wallet'
+
+## Todo
+⋅⋅* Replace 'bip39' with new module or custom implementation
 
 ## Contributing
 
